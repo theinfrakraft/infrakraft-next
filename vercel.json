@@ -1,0 +1,5 @@
+{
+  "functions": {
+    "app/api/whatsapp/route.ts": { "maxDuration": 10 }
+  }
+}

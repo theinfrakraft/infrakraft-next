@@ -1,5 +1,23 @@
 {
+  "regions": ["bom1"],
   "functions": {
-    "app/api/whatsapp/route.ts": { "maxDuration": 10 }
-  }
+    "app/api/whatsapp/route.ts": { "maxDuration": 10 },
+    "app/api/tools/workflow-automation/route.ts": { "maxDuration": 30 },
+    "app/api/tools/ai-agents/route.ts": { "maxDuration": 30 },
+    "app/api/tools/multimodal-ai/route.ts": { "maxDuration": 30 },
+    "app/api/tools/rag/route.ts": { "maxDuration": 30 },
+    "app/api/tools/ai-product-development/route.ts": { "maxDuration": 30 },
+    "app/api/tools/ai-video-production/route.ts": { "maxDuration": 30 },
+    "app/api/tools/ai-voice-avatars/route.ts": { "maxDuration": 30 },
+    "app/api/tools/connected-workspace/route.ts": { "maxDuration": 30 },
+    "app/api/tools/ai-quality-cost-monitoring/route.ts": { "maxDuration": 30 }
+  },
+  "headers": [
+    {
+      "source": "/(.*)\\.(js|css|woff2|png|jpg|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
 }

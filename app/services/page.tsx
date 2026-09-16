@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Script from 'next/script';
+import { SERVICE_PILLARS } from '@/lib/services-data';
 
 export const metadata: Metadata = {
   title: 'Services | Web, Cloud, DevOps & AI Automation',
@@ -65,6 +66,55 @@ export default function ServicesPage() {
             <div className="ai-card"><span className="ai-icon">🛠️</span><div className="ai-card-name">Custom AI Integration</div><div className="ai-card-desc">Internal knowledge base, document Q&A, AI-powered search, or a bespoke use case for your business. Scoped and quoted after a free discovery call.</div></div>
           </div>
           <div style={{ marginTop: '36px', textAlign: 'center' }}><Link href="/pricing#ai" className="btn btn-accent">See AI pricing</Link></div>
+        </div>
+      </section>
+
+      {/* AI EXPERTISE PILLARS */}
+      <section className="section" id="ai-expertise">
+        <div className="container">
+          <div className="section-label">AI Expertise</div>
+          <h2 className="section-title">9 areas we go deep on</h2>
+          <p className="section-sub">
+            From automating workflows to building AI agents and producing video at scale — each pillar is a specialised service with its own toolset and delivery process.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px', marginTop: '36px' }} className="reveal-stagger">
+            {SERVICE_PILLARS.map((pillar) => (
+              <Link
+                key={pillar.slug}
+                href={`/services/${pillar.slug}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <div className="service-card" style={{ height: '100%', cursor: 'pointer' }}>
+                  <div style={{ fontSize: '1.8rem', marginBottom: '12px' }}>{pillar.icon}</div>
+                  <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text)', marginBottom: '8px' }}>
+                    {pillar.name}
+                  </div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5', marginBottom: '14px' }}>
+                    {pillar.tagline}
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                    {pillar.tools.slice(0, 3).map((tool) => (
+                      <span key={tool} style={{
+                        fontSize: '0.68rem',
+                        padding: '2px 8px',
+                        borderRadius: '20px',
+                        background: 'var(--surface-2)',
+                        color: 'var(--text-muted)',
+                        border: '1px solid var(--border)',
+                      }}>
+                        {tool}
+                      </span>
+                    ))}
+                    {pillar.tools.length > 3 && (
+                      <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', padding: '2px 4px' }}>
+                        +{pillar.tools.length - 3} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

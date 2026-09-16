@@ -23,6 +23,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/admin" className="admin-nav-link">📊 Dashboard</Link>
           <Link href="/admin/leads" className="admin-nav-link">📬 Leads</Link>
           <Link href="/admin/blog" className="admin-nav-link">✏️ Blog</Link>
+          <Link href="/admin/content" className="admin-nav-link">🎬 Content</Link>
         </nav>
         <div style={{ padding: '0 20px' }}>
           <form action="/api/admin/login" method="POST">

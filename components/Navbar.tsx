@@ -8,9 +8,9 @@ const WA = '918148656971';
 
 const NAV_LINKS = [
   { href: '/services', label: 'Services', id: 'services' },
+  { href: '/tools', label: 'AI Tools', id: 'tools' },
   { href: '/#work', label: 'Work', id: 'work' },
   { href: '/pricing', label: 'Pricing', id: 'pricing' },
-  { href: '/services#tutoring', label: 'Tutoring', id: 'tutoring' },
   { href: '/blog', label: 'Blog', id: 'blog' },
   { href: '/contact', label: 'Contact', id: 'contact' },
 ];
